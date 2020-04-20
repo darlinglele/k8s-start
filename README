@@ -1,0 +1,20 @@
+./init.sh
+./docker-install.sh
+./k8s-install.sh
+
+关闭swap
+永久关闭 建议一劳永逸，sudo vim /etc/fstab将有swap.img那行注释掉，保存即可
+
+
+./kubeadm-init.sh 初始化master
+
+./apply-flannel.sh  过一会 master应该是ready状态
+
+在其他节点上执行 kubedm-join.sh 
+
+
+./kubeadm-reset 重置master,  需要重新执行kubeadm-init.sh 
+
+
+kube-flannel.yaml 是从https://github.com/coreos/flannel/blob/master/Documentation/kube-flannel.yml保存到本地的文件， 可能会过期
+apt-key.gpg是从 https://packages.cloud.google.com/apt/doc/apt-key.gpg下载来的，需要翻墙
