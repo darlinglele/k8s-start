@@ -1,0 +1,1 @@
+sudo kubeadm token list
