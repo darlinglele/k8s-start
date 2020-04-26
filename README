@@ -18,3 +18,9 @@
 
 kube-flannel.yaml 是从https://github.com/coreos/flannel/blob/master/Documentation/kube-flannel.yml保存到本地的文件， 可能会过期
 apt-key.gpg是从 https://packages.cloud.google.com/apt/doc/apt-key.gpg下载来的，需要翻墙
+
+
+
+
+注册中心
+	eureka-server eureka-product eureka-consumer
