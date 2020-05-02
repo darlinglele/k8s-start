@@ -1,24 +1,25 @@
-./init.sh
+./init.sh 
 ./docker-install.sh
 ./k8s-install.sh
 
-关闭swap
-永久关闭 建议一劳永逸，sudo vim /etc/fstab将有swap.img那行注释掉，保存即可
+关闭swap 永久关闭sudo vim /etc/fstab将有swap.img那行注释掉，保存即可
 
 
-./kubeadm-init.sh 初始化master
+./init-master.sh 初始化master
 
-./apply-flannel.sh  过一会 master应该是ready状态
+./apply-flannel.sh  过一会master应该是ready状态
 
-在其他节点上执行 kubedm-join.sh 
+在其他节点上执行 join.sh 
 
 
-./kubeadm-reset 重置master,  需要重新执行kubeadm-init.sh 
-
+./reset-master.sh 重置master,  需要重新执行init-master.sh 
+./reset-node.sh 重置节点
+./show-token.sh 显示join时需要的token   
 
 kube-flannel.yaml 是从https://github.com/coreos/flannel/blob/master/Documentation/kube-flannel.yml保存到本地的文件， 可能会过期
-apt-key.gpg是从 https://packages.cloud.google.com/apt/doc/apt-key.gpg下载来的，需要翻墙
+flannel网络会使用第一个网卡建立虚拟网络， 因为要确保master第一个网卡和其他节点能够互相通信， virtualbox比较合理的网络配置是，第一个网卡使用Host模式（节点互通），第二个网卡NAT模式（连接外部网络）; 桥接网络虽然可以同时做到节点互通和连接外部网络，但需要借助路由器，有一定的耦合；
 
+apt-key.gpg是从 https://packages.cloud.google.com/apt/doc/apt-key.gpg下载来的，需要翻墙
 
 
 

@@ -1,1 +1,2 @@
-sudo kubeadm token list
+sudo kubeadm token create --print-join-command
+
