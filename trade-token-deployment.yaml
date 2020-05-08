@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: trade-token-deployment
+  labels:
+    app: trade-token
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: trade-token
+  template:
+    metadata:
+      labels:
+        app: trade-token
+    spec:
+      containers:
+      - name: trade-token
+        image: registry:5000/gaoliang.trade.token
+        ports:
+        - containerPort: 12411

@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: trade-token-service
+spec:
+  selector:
+    app: trade-token
+  type: NodePort
+  ports:
+  - name: http
+    protocol: TCP
+    port: 12411
+    targetPort: 12411
+    nodePort: 30009

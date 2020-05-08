@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: trade-gateway-deployment
+  labels:
+    app: trade-gateway
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: trade-gateway
+  template:
+    metadata:
+      labels:
+        app: trade-gateway
+    spec:
+      containers:
+      - name: trade-gateway
+        image: registry:5000/gaoliang.trade.gateway
+        ports:
+        - containerPort: 12231

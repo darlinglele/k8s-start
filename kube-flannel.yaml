@@ -380,6 +380,8 @@ spec:
 
         - --kube-subnet-mgr
 
+        - --iface=enp0s3
+
         resources:
 
           requests:
@@ -568,6 +570,8 @@ spec:
 
         - --kube-subnet-mgr
 
+        - --iface=enp0s3
+
         resources:
 
           requests:
@@ -730,6 +734,7 @@ spec:
 
         - /etc/cni/net.d/10-flannel.conflist
 
+
         volumeMounts:
 
         - name: cni
@@ -755,6 +760,8 @@ spec:
         - --ip-masq
 
         - --kube-subnet-mgr
+
+        - --iface=enp0s3
 
         resources:
 
@@ -918,6 +925,7 @@ spec:
 
         - /etc/cni/net.d/10-flannel.conflist
 
+
         volumeMounts:
 
         - name: cni
@@ -943,6 +951,8 @@ spec:
         - --ip-masq
 
         - --kube-subnet-mgr
+
+        - --iface=enp0s3
 
         resources:
 
@@ -1106,6 +1116,7 @@ spec:
 
         - /etc/cni/net.d/10-flannel.conflist
 
+
         volumeMounts:
 
         - name: cni
@@ -1131,6 +1142,8 @@ spec:
         - --ip-masq
 
         - --kube-subnet-mgr
+
+        - --iface=enp0s3 
 
         resources:
 
