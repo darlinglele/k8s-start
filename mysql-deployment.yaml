@@ -23,3 +23,13 @@ spec:
         env:
         - name: MYSQL_ROOT_PASSWORD
           value: "root123"
+        volumeMounts:
+        - name: mysqldata
+          mountPath: "/var/lib/mysql"
+          readOnly: false
+          subPath: mysql
+      volumes:
+      - name: mysqldata
+        nfs:
+          server: nfs-server
+          path: "/nfsroot"
