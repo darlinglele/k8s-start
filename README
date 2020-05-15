@@ -5,7 +5,7 @@
 关闭swap 永久关闭sudo vim /etc/fstab将有swap.img那行注释掉，保存即可
 
 
-./init-master.sh 初始化master
+./init-master.sh 初始化master, 需要修改一下ip地址
 
 a -f kube-flannel.yaml 过一会master应该是ready状态
 
