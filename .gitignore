@@ -1,0 +1,6 @@
+*.log
+**/.mvn
+mvnw
+mvnw.cmd
+eureka.consumer/mvnw.cmd eureka.product/mvnw.cmd eureka.server/mvnw.cmd
+**/**/*.jar

@@ -1,0 +1,1 @@
+scp zhixiong@master:~/a/* .
